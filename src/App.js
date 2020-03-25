@@ -1,10 +1,10 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "./components/common/layout/Layout";
 
-import TaskPage from "./views/TaskPage";
-
-function App() {
-  return <TaskPage />;
-}
+const App = () => (
+  <>
+    <Layout />
+  </>
+);
 
 export default App;
