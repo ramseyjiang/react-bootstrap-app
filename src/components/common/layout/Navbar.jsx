@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar,  Nav } from "react-bootstrap";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const Navigation = () => {
+  const { user } = useContext(AuthContext);
+
   //collapseOnSelect is not stable, it works for href, but not works for router to. That's why I build it by myself.
   const [expanded, setExpanded] = useState(false);
   
@@ -15,16 +18,16 @@ const Navigation = () => {
           <NavLink
             exact
             className='nav-link'
-            to='/'
+            to='/home'
             onClick={() => setExpanded(false)}>
             Home
           </NavLink>
-          <NavLink
+          { user && <NavLink
             className='nav-link'
             to='/tasks'
             onClick={() => setExpanded(false)}>
             Tasks
-          </NavLink>
+          </NavLink>}
           <NavLink
             className='nav-link'
             to='/contact'
