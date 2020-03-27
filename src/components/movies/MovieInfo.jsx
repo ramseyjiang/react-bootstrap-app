@@ -2,9 +2,10 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 const MovieInfo = ( { movie } ) => {
+  console.log(movie);
   return (
     <>
-      {movie.Poster && <Card className='text-center'>
+      {movie.Poster !== "N/A" && <Card className='text-center'>
         {movie.Title ? (
           <Card.Header>Title: {movie.Title}</Card.Header>
         ) : (
