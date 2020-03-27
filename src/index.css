@@ -20,3 +20,12 @@ code {
   margin-top: 55px;
   margin-bottom: 15px;
 }
+
+.movie-card-bottom {
+  padding-bottom: 10px;
+}
+
+.movie-poster-desktop {
+  width: 330px;
+  height: 200px;
+}

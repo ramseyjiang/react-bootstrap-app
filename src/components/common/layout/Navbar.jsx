@@ -22,6 +22,12 @@ const Navigation = () => {
             onClick={() => setExpanded(false)}>
             Home
           </NavLink>
+          <NavLink
+            className='nav-link'
+            to='/movies'
+            onClick={() => setExpanded(false)}>
+            Movies
+          </NavLink>
           { user && <NavLink
             className='nav-link'
             to='/tasks'

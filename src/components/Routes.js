@@ -4,6 +4,7 @@ import { AuthContext } from "../contexts/AuthContext";
 import Home from "../views/Home";
 import NotFound from "../views/NotFound";
 import TaskPage from "../views/TaskPage";
+import MoviePage from "../views/MoviePage";
 import Contact from "../views/Contact";
 
 const Routes = () => {
@@ -13,6 +14,7 @@ const Routes = () => {
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/home' component={Home} />
+      <Route path='/movies' component={MoviePage} />
       {user && <Route path='/tasks' component={TaskPage} />}
       <Route path='/contact' component={Contact} />
       <Route component={NotFound} />
