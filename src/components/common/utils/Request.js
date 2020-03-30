@@ -6,16 +6,20 @@ export const get = async url => {
     if (result.Response === "True") {
       return {
         status: true,
-        data: result.Search,
-        loading: false,
-        errorMessage: null
+        result: {
+          data: result.Search,
+          loading: false,
+          errorMessage: null
+        }
       };
     } else {
       return {
         status: false,
-        data: [],
-        loading: false,
-        errorMessage: result.Error
+        result: {
+          data: [],
+          loading: false,
+          errorMessage: result.Error
+        }
       };
     }
   } catch (err) {

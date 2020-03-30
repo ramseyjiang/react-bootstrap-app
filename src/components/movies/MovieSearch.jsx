@@ -13,7 +13,11 @@ const Search = () => {
 
   const handleSearch = () => {
     movieApi.loading();
-    movieApi.searchMovie(MOVIE_API_URL + searchValue);
+    if(searchValue !== '') {
+      movieApi.searchMovie(MOVIE_API_URL + searchValue)
+    } else {
+      movieApi.empty();
+    }
   }
 
   return (

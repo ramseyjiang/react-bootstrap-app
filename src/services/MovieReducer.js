@@ -19,6 +19,14 @@ export const moviesReducer = (state, action) => {
         ...action.data
       };
     }
+    case "empty": {
+      return {
+        ...state,
+        loading: true,
+        errorMessage:
+          "Please input search movie name or something else for search a movie"
+      };
+    }
     default:
       throw new Error();
   }

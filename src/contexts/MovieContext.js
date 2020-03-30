@@ -10,18 +10,21 @@ const MovieContextProvider = ({ children }) => {
   const loading = useCallback(() => dispatch({ type: "loading" }), []);
 
   const searchMovie = useCallback(url => {
-    get(url).then(data => {
-      if (data.status === true) {
-        dispatch({ type: "success", data: data });
+    get(url).then(res => {
+      if (res.status === true) {
+        dispatch({ type: "success", data: res.result });
       } else {
-        dispatch({ type: "failure", data: data });
+        dispatch({ type: "failure", data: res.result });
       }
     });
   }, []);
 
-  const movieApi = useMemo(() => ({ loading, searchMovie, state }), [
+  const empty = useCallback(() => dispatch({ type: "empty" }), []);
+
+  const movieApi = useMemo(() => ({ loading, searchMovie, empty, state }), [
     loading,
     searchMovie,
+    empty,
     state
   ]);
 
