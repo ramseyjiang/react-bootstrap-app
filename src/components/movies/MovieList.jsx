@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../../contexts/MovieContext";
 import MovieInfo from './MovieInfo';
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Alert } from "react-bootstrap";
 
 const MovieList = () => {
     const { movieApi } = useContext(MovieContext);
@@ -11,7 +11,7 @@ const MovieList = () => {
         {movieApi.state.loading && !movieApi.state.errorMessage ? (
           <span>loading... </span>
         ) : movieApi.state.errorMessage ? (
-          <div className="errorMessage">{movieApi.state.errorMessage}</div>
+          <Alert variant='danger'>{movieApi.state.errorMessage}</Alert>
         ) : (
           <Row>
             {movieApi.state.data && movieApi.state.data.map((movie, index) => (
