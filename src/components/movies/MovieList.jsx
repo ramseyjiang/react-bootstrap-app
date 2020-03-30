@@ -8,13 +8,13 @@ const MovieList = () => {
 
     return (
       <>
-        {movieApi.movies.loading && !movieApi.movies.errorMessage ? (
+        {movieApi.state.loading && !movieApi.state.errorMessage ? (
           <span>loading... </span>
-        ) : movieApi.movies.errorMessage ? (
-          <div className="errorMessage">{movieApi.movies.errorMessage}</div>
+        ) : movieApi.state.errorMessage ? (
+          <div className="errorMessage">{movieApi.state.errorMessage}</div>
         ) : (
           <Row>
-            {movieApi.movies.data && movieApi.movies.data.map((movie, index) => (
+            {movieApi.state.data && movieApi.state.data.map((movie, index) => (
               <Col className="col-6 movie-card-bottom" key={index}>
                 <MovieInfo movie={movie} />
               </Col>

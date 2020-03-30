@@ -1,39 +1,19 @@
 import React, { useState, useContext } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { MovieContext } from "../../contexts/MovieContext";
-import { get } from "../common/utils/Request";
 
 const Search = () => {
   const { movieApi } = useContext(MovieContext);
   const [searchValue, setSearchValue] = useState("");
-  const movieApiUrl = "http://www.omdbapi.com/?apikey=f91c3148&s=";
+  const MOVIE_API_URL = "http://www.omdbapi.com/?apikey=f91c3148&s=";
 
   const handleSearchChange = e => {
     setSearchValue(e.target.value);
   }
-  
-  const handleSearch = () => {
-    movieApi.setMovies ({
-      data:[],
-      loading: true,
-      errorMessage: null
-    });
 
-    get(movieApiUrl + searchValue).then(data => {
-      if (data.Response === "True") {
-        movieApi.setMovies({
-          data: data.Search,
-          loading: false,
-          errorMessage: null
-        });
-      } else {
-        movieApi.setMovies ({
-          data:[],
-          loading: false,
-          errorMessage: data.Error
-        });
-      }
-    });
+  const handleSearch = () => {
+    movieApi.loading();
+    movieApi.searchMovie(MOVIE_API_URL + searchValue);
   }
 
   return (

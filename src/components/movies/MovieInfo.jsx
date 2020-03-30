@@ -2,7 +2,6 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 const MovieInfo = ( { movie } ) => {
-  console.log(movie);
   return (
     <>
       {movie.Poster !== "N/A" && <Card className='text-center'>

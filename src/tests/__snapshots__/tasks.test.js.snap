@@ -29,7 +29,7 @@ Array [
             className="btn btn-primary btn-sm"
             disabled={false}
             onClick={[Function]}
-            type="button"
+            type="submit"
           >
             Search
           </button>

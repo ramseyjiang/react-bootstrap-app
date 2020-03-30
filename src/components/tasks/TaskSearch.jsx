@@ -6,11 +6,8 @@ const TaskSearch = () => {
   const { taskApi } = useContext(TaskContext);
   const [searchValue, setSearchValue] = useState("");
 
-  const handleChange = e => {
-    setSearchValue(e.target.value);
-  };
-
-  const search = () => {
+  const search = (e) => {
+    e.preventDefault();
     taskApi.searchTask(searchValue);
   };
 
@@ -24,10 +21,10 @@ const TaskSearch = () => {
       <Form>
         <Form.Group as={Row}>
           <Col sm={8}>
-            <Form.Control type="text" placeholder="Input search content" onChange={handleChange} value={searchValue}/>
+            <Form.Control type="text" placeholder="Input search content" onChange={e => (setSearchValue(e.target.value))} value={searchValue}/>
           </Col>
           <Col sm={4}>
-            <Button variant="primary" type="button" size="sm" onClick={search}>Search</Button>{' '}
+            <Button variant="primary" type="submit" size="sm" onClick={search}>Search</Button>{' '}
             <Button variant="success" type="button" size="sm" onClick={refresh}>Refresh</Button>
           </Col>
         </Form.Group>
