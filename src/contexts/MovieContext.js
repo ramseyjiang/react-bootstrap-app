@@ -11,10 +11,10 @@ const MovieContextProvider = ({ children }) => {
 
   const searchMovie = useCallback(url => {
     get(url).then(data => {
-      if (data.Response === "True") {
-        dispatch({ type: "success", data: data.Search });
+      if (data.status === true) {
+        dispatch({ type: "success", data: data });
       } else {
-        dispatch({ type: "failure", error: data.Error });
+        dispatch({ type: "failure", data: data });
       }
     });
   }, []);

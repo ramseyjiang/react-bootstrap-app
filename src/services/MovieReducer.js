@@ -11,16 +11,12 @@ export const moviesReducer = (state, action) => {
     }
     case "success": {
       return {
-        data: action.data,
-        loading: false,
-        errorMessage: null
+        ...action.data
       };
     }
     case "failure": {
       return {
-        data: [],
-        loading: false,
-        errorMessage: action.error
+        ...action.data
       };
     }
     default:
