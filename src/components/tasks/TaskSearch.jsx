@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
-import { TaskContext } from "../../contexts/TaskContext";
+import React, { useState } from "react";
+import { useTaskContext } from "../../contexts/TaskContext";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
 const TaskSearch = () => {
-  const { taskApi } = useContext(TaskContext);
+  const { taskApi } = useTaskContext();
   const [searchValue, setSearchValue] = useState("");
 
   const search = (e) => {

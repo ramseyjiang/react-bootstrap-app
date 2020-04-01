@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { MovieContext } from "../../contexts/MovieContext";
+import React from "react";
+import { useMovieContext } from "../../contexts/MovieContext";
 import MovieInfo from './MovieInfo';
 import { Row, Col, Alert } from "react-bootstrap";
 
 const MovieList = () => {
-    const { movieApi } = useContext(MovieContext);
+    const { movieApi } = useMovieContext();
 
     return (
       <>

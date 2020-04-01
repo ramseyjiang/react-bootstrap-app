@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import { MovieContext } from "../../contexts/MovieContext";
+import { useMovieContext } from "../../contexts/MovieContext";
 
 const Search = () => {
-  const { movieApi } = useContext(MovieContext);
+  const { movieApi } = useMovieContext();
   const [searchValue, setSearchValue] = useState("");
   const MOVIE_API_URL = "http://www.omdbapi.com/?apikey=f91c3148&s=";
 

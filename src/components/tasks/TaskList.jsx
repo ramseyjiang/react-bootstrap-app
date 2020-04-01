@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { TaskContext } from '../../contexts/TaskContext';
+import React from 'react';
+import { useTaskContext } from '../../contexts/TaskContext';
 import { Container, Table, Button } from 'react-bootstrap';
 import TaskElementEdit from './TaskElementEdit';
 
 const TaskList = () => {
-    const { taskApi } = useContext(TaskContext);
+    const { taskApi } = useTaskContext();
 
     return (
       <Container>

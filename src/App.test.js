@@ -1,12 +1,15 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import Layout from "./components/common/layout/Layout";
+import AuthContextProvider from "./contexts/AuthContext";
 
-test("renders learn react link", () => {
+test("HooksHut", () => {
   const { getByText } = render(
     <BrowserRouter>
-      <App />
+      <AuthContextProvider>
+        <Layout />
+      </AuthContextProvider>
     </BrowserRouter>
   );
   const linkElement = getByText(/HooksHut/i);

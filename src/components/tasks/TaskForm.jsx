@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { TaskContext } from '../../contexts/TaskContext';
+import React, { useState } from 'react';
+import { useTaskContext } from '../../contexts/TaskContext';
 import { Container, Form, Button } from 'react-bootstrap';
 import InputText from '../common/form/InputText';
 
 const TaskForm = () => {
-  const { taskApi } = useContext(TaskContext);
+  const { taskApi } = useTaskContext();
 
   const [task, setTask] = useState({
     title: '',

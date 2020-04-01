@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import TaskPage from "../views/TaskPage";
-import { initState } from "../services/TaskReducer";
 
 test("show task search component", () => {
   const { getByPlaceholderText } = render(<TaskPage />);

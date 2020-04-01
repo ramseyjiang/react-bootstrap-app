@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar,  Nav } from "react-bootstrap";
-import { AuthContext } from "../../../contexts/AuthContext";
+import { useAuthContext } from "../../../contexts/AuthContext";
 
 const Navigation = () => {
-  const { user } = useContext(AuthContext);
+  const { authApi } = useAuthContext();
 
   //collapseOnSelect is not stable, it works for href, but not works for router to. That's why I build it by myself.
   const [expanded, setExpanded] = useState(false);
@@ -28,12 +28,12 @@ const Navigation = () => {
             onClick={() => setExpanded(false)}>
             Movies
           </NavLink>
-          { user && <NavLink
+          <NavLink
             className='nav-link'
             to='/tasks'
             onClick={() => setExpanded(false)}>
             Tasks
-          </NavLink>}
+          </NavLink>
           <NavLink
             className='nav-link'
             to='/contact'
@@ -41,10 +41,13 @@ const Navigation = () => {
             Contact
           </NavLink>
         </Nav>
-        <Nav>
-          <Nav.Link href="#login">Login</Nav.Link>
-          <Nav.Link href="#register">Register</Nav.Link>
-        </Nav>
+        { !authApi.state.isLoggedIn && <Nav>
+          <NavLink exact to="/login" className='nav-link'>Login</NavLink>
+          <NavLink exact to="/register" className='nav-link'>Register</NavLink>
+        </Nav> }
+        { authApi.state.isLoggedIn && <Nav>
+          <NavLink to="/home" onClick={() => authApi.logout()} className='nav-link'>Logout</NavLink>
+        </Nav> }
       </Navbar.Collapse>
     </Navbar>
   );

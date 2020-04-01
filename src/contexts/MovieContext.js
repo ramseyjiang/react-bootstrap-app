@@ -1,25 +1,38 @@
-import React, { createContext, useMemo, useCallback, useReducer } from "react";
-import { initState, moviesReducer } from "../services/MovieReducer";
+import React, {
+  createContext,
+  useMemo,
+  useContext,
+  useCallback,
+  useReducer
+} from "react";
+import {
+  initState,
+  moviesReducer,
+  LOADING,
+  SEARCH_SUCCESS,
+  SEARCH_FAILURE,
+  INPUT_EMPTY
+} from "../services/MovieReducer";
 import { get } from "../components/common/utils/Request";
 
-export const MovieContext = createContext();
+const MovieContext = createContext();
 
 const MovieContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(moviesReducer, initState);
 
-  const loading = useCallback(() => dispatch({ type: "loading" }), []);
+  const loading = useCallback(() => dispatch({ type: LOADING }), []);
 
   const searchMovie = useCallback(url => {
     get(url).then(res => {
       if (res.status === true) {
-        dispatch({ type: "success", data: res.result });
+        dispatch({ type: SEARCH_SUCCESS, data: res.result });
       } else {
-        dispatch({ type: "failure", data: res.result });
+        dispatch({ type: SEARCH_FAILURE, data: res.result });
       }
     });
   }, []);
 
-  const empty = useCallback(() => dispatch({ type: "empty" }), []);
+  const empty = useCallback(() => dispatch({ type: INPUT_EMPTY }), []);
 
   const movieApi = useMemo(() => ({ loading, searchMovie, empty, state }), [
     loading,
@@ -33,6 +46,10 @@ const MovieContextProvider = ({ children }) => {
       {children}
     </MovieContext.Provider>
   );
+};
+
+export const useMovieContext = () => {
+  return useContext(MovieContext);
 };
 
 export default MovieContextProvider;

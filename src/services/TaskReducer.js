@@ -1,5 +1,11 @@
 import uniqid from "uniqid";
 
+// Actions
+export const ADD = "ADD";
+export const DELETE = "DELETE";
+export const SEARCH = "SEARCH";
+export const RELOAD = "RELOAD";
+
 export const initState = {
   counter: 2,
   tasks: [
@@ -30,19 +36,19 @@ export const initState = {
 
 export const tasksReducer = (state, action) => {
   switch (action.type) {
-    case "add": {
+    case ADD: {
       return addTask(state, action);
     }
 
-    case "delete": {
+    case DELETE: {
       return deleteTask(state, action);
     }
 
-    case "search": {
+    case SEARCH: {
       return searchTask(state, action);
     }
 
-    case "reload": {
+    case RELOAD: {
       return reloadTask(state, action);
     }
     default:

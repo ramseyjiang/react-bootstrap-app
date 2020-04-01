@@ -1,65 +1,75 @@
 import React, {
   createContext,
-  useState,
-  useEffect,
+  useCallback,
   useMemo,
-  useContext
+  useContext,
+  useEffect,
+  useReducer
 } from "react";
 
 import {
-  getLocal,
-  removeLocal,
-  setLocal
-} from "../components/common/utils/Storage.js";
+  initAuth,
+  authReducer,
+  INIT,
+  LOADING,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT
+} from "../services/AuthReducer";
 
-import { useHistory } from "react-router-dom";
-
-export const AuthContext = createContext(null);
-
-const initAuth = {};
+const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-  const history = useHistory();
-  const [auth, setAuth] = useState(initAuth);
+  const [state, dispatch] = useReducer(authReducer, initAuth);
 
-  /* The first time the component is rendered, it tries to
-   * fetch the auth from a source, like a cookie or the localStorage.
-   */
+  //The first time a user visits the website, it will only run once.
+  //The other scenario, a user closed website without logout, after the user come back, it will auto login.
   useEffect(() => {
-    const currentAuth = getLocal("auth");
-    if (currentAuth) {
-      setAuth(currentAuth);
+    if (state.username === null) {
+      dispatch({ type: INIT });
+    }
+  }, [state.username]);
+
+  const loading = () => dispatch({ type: LOADING });
+
+  const login = useCallback(username => {
+    if (username === "ramsey") {
+      return dispatch({ type: LOGIN_SUCCESS, username: username });
+    } else {
+      return dispatch({ type: LOGIN_FAIL, error: "User not found!" });
     }
   }, []);
 
-  const onLogout = () => {
-    setAuth(initAuth);
-    removeLocal("user");
-    history("/");
-  };
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  const onLogin = newAuth => {
-    //todo remove hard code
-    let userInfo = {
-      username: "ramsey",
-      age: 39
-    };
-    setAuth(newAuth);
-    setLocal("user", userInfo);
-  };
+  // A fake authenticator to mock async api call
+  const apiLogin = useCallback(async username => {
+    await delay(2000);
+    if (username === "ramsey") {
+      return dispatch({ type: LOGIN_SUCCESS, username: username });
+    } else {
+      return dispatch({ type: LOGIN_FAIL, error: "User not found!" });
+    }
+  }, []);
 
-  const user = getLocal("user");
+  const logout = useCallback(() => {
+    dispatch({ type: LOGOUT });
+  }, []);
 
-  const authApi = useMemo(() => ({ auth, user, onLogin, onLogout }), [
-    auth,
-    user
+  const authApi = useMemo(() => ({ state, loading, logout, login, apiLogin }), [
+    logout,
+    login,
+    apiLogin,
+    state
   ]);
 
   return (
-    <AuthContext.Provider value={authApi}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ authApi }}>{children}</AuthContext.Provider>
   );
 };
 
-export const useAuthContext = () => useContext(AuthContext);
+export const useAuthContext = () => {
+  return useContext(AuthContext);
+};
 
 export default AuthContextProvider;

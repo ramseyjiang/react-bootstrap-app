@@ -1,3 +1,9 @@
+// Actions
+export const LOADING = "LOADING";
+export const SEARCH_SUCCESS = "SEARCH_SUCCESS";
+export const SEARCH_FAILURE = "SEARCH_FAILURE";
+export const INPUT_EMPTY = "INPUT_EMPTY";
+
 export const initState = {
   data: [],
   loading: false,
@@ -6,20 +12,20 @@ export const initState = {
 
 export const moviesReducer = (state, action) => {
   switch (action.type) {
-    case "loading": {
+    case LOADING: {
       return { ...state, loading: true };
     }
-    case "success": {
+    case SEARCH_SUCCESS: {
       return {
         ...action.data
       };
     }
-    case "failure": {
+    case SEARCH_FAILURE: {
       return {
         ...action.data
       };
     }
-    case "empty": {
+    case INPUT_EMPTY: {
       return {
         ...state,
         loading: true,
