@@ -8,9 +8,10 @@ const Navigation = () => {
 
   //collapseOnSelect is not stable, it works for href, but not works for router to. That's why I build it by myself.
   const [expanded, setExpanded] = useState(false);
+  const layoutColor = authApi.state.isLoggedIn ? "primary" : "dark";  //It is a cue for change different layout
   
   return (
-    <Navbar expanded={expanded} fixed='top' expand="sm" bg="dark" variant="dark">
+    <Navbar expanded={expanded} fixed='top' expand="sm" bg={layoutColor} variant="dark">
       <Navbar.Brand href="/">HooksHut</Navbar.Brand>
       <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
