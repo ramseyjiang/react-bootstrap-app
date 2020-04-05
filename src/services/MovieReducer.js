@@ -16,13 +16,16 @@ export const moviesReducer = (state, action) => {
       return { ...state, loading: true };
     }
     case SEARCH_SUCCESS: {
+      console.log();
       return {
-        ...action.data
+        ...initState,
+        data: action.data
       };
     }
     case SEARCH_FAILURE: {
       return {
-        ...action.data
+        ...initState,
+        errorMessage: action.error
       };
     }
     case INPUT_EMPTY: {

@@ -2,26 +2,7 @@ export const get = async url => {
   try {
     //ES2017 rules
     const response = await fetch(url);
-    const result = await response.json();
-    if (result.Response === "True") {
-      return {
-        status: true,
-        result: {
-          data: result.Search,
-          loading: false,
-          errorMessage: null
-        }
-      };
-    } else {
-      return {
-        status: false,
-        result: {
-          data: [],
-          loading: false,
-          errorMessage: result.Error
-        }
-      };
-    }
+    return await response.json();
   } catch (err) {
     console.log(err);
   }

@@ -1,13 +1,13 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
-import Home from "../views/Home";
-import MoviePage from "../views/MoviePage";
+import HomePage from "../views/HomePage";
 import Login from "./auth/Login";
 
 //lazy-loading each and every component might be an anti-pattern and it is up to the developers to wisely choose
 //withholding unnecessary code during initial download and lazy-loading them on demand, all without sacrificing user experience.
 const NotFound = lazy(() => import("../views/NotFound"));
+const MoviePage = lazy(() => import("../views/MoviePage"));
 const TaskPage = lazy(() => import("../views/TaskPage"));
 const Contact = lazy(() => import("../views/Contact"));
 
@@ -27,8 +27,8 @@ const Routes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/home' component={Home} />
+        <Route exact path='/' component={HomePage} />
+        <Route path='/home' component={HomePage} />
         <AuthRoute path='/login' component={Login} />
         <Route path='/movies' component={MoviePage} />
         <AuthRoute path='/tasks' component={TaskPage} />

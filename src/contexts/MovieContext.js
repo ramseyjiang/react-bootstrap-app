@@ -23,11 +23,11 @@ const MovieContextProvider = ({ children }) => {
   const loading = useCallback(() => dispatch({ type: LOADING }), []);
 
   const searchMovie = useCallback(url => {
-    get(url).then(res => {
-      if (res.status === true) {
-        dispatch({ type: SEARCH_SUCCESS, data: res.result });
+    get(url).then(result => {
+      if (result.Response === "True") {
+        dispatch({ type: SEARCH_SUCCESS, data: result.Search });
       } else {
-        dispatch({ type: SEARCH_FAILURE, data: res.result });
+        dispatch({ type: SEARCH_FAILURE, error: result.Error });
       }
     });
   }, []);
