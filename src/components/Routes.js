@@ -16,7 +16,7 @@ const Routes = () => {
 
   const AuthRoute = ({ component, ...options }) => {
     if (component === Login && authApi.state.isLoggedIn) {
-      return <Redirect to='/home' />;
+      return <Redirect to='/react-bootstrap-app' />;
     } else {
       const finalComponent = authApi.state.isLoggedIn ? component : Login;
 
