@@ -5,7 +5,7 @@ import { useMovieContext } from "../../contexts/MovieContext";
 const Search = () => {
   const { movieApi } = useMovieContext();
   const [searchValue, setSearchValue] = useState("");
-  const MOVIE_API_URL = "http://www.omdbapi.com/?apikey=f91c3148&s=";
+  const MOVIE_API_URL = "https://www.omdbapi.com/?apikey=f91c3148&s=";
 
   const handleSearchChange = e => {
     setSearchValue(e.target.value);
