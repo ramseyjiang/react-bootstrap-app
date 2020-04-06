@@ -27,8 +27,8 @@ const Routes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/home' component={HomePage} />
+        <Route exact path='/react-bootstrap-app' component={HomePage} />
+        <Route path='/react-bootstrap-app' component={HomePage} />
         <AuthRoute path='/login' component={Login} />
         <Route path='/movies' component={MoviePage} />
         <AuthRoute path='/tasks' component={TaskPage} />
