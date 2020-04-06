@@ -12,14 +12,14 @@ const Navigation = () => {
   
   return (
     <Navbar expanded={expanded} fixed='top' expand="sm" bg={layoutColor} variant="dark">
-      <Navbar.Brand href="/">HooksHut</Navbar.Brand>
+      <Navbar.Brand href="/react-bootstrap-app">HooksHut</Navbar.Brand>
       <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className="mr-auto">
           <NavLink
             exact
             className='nav-link'
-            to='/home'
+            to='/react-bootstrap-app'
             onClick={() => setExpanded(false)}>
             Home
           </NavLink>
