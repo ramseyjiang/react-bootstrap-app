@@ -17,7 +17,7 @@ const Search = () => {
     if(searchValue === '') {
       movieApi.searchMovie(MOVIE_API_URL + DEFAULT_SEARCH)
     } 
-  },[]);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();

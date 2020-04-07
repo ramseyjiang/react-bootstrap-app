@@ -47,7 +47,7 @@ const Navigation = () => {
           <NavLink exact to="/register" className='nav-link'>Register</NavLink>
         </Nav> }
         { authApi.state.isLoggedIn && <Nav>
-          <NavLink to="/home" onClick={() => authApi.logout()} className='nav-link'>Logout</NavLink>
+          <NavLink to="/react-bootstrap-app" onClick={() => authApi.logout()} className='nav-link'>Logout</NavLink>
         </Nav> }
       </Navbar.Collapse>
     </Navbar>
