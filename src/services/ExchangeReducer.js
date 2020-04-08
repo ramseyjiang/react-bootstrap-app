@@ -2,22 +2,20 @@ export const LOADING = "LOADING";
 export const GET_LATEST_SUCCESS = "GET_LATEST_SUCCESS";
 export const GET_LATEST_FAILURE = "GET_LATEST_FAILURE";
 
-const CURRENCIES = ["CNY", "NZD", "CAD", "SGD", "HKD", "AUD"];
+const CURRENCIES = ["AUD", "CNY", "NZD", "SGD"];
 
 export const initState = {
   data: {
     initialized: false,
     rates: {},
-    date: null,
     base: "USD",
     tableKeys: {
+      AUD: "AUD",
       CNY: "CNY",
       NZD: "NZD",
-      CAD: "CAD",
-      SGD: "SGD",
-      HKD: "HKD",
-      AUD: "AUD"
-    }
+      SGD: "SGD"
+    },
+    barData: {}
   },
   loading: false,
   errorMessage: null
@@ -34,7 +32,6 @@ export const exchangeReducer = (state, action) => {
         data: {
           initialized: true,
           rates: action.data.rates,
-          date: action.data.date,
           base: action.data.base,
           barData: generateBarData(action.data.rates),
           tableKeys: initState.data.tableKeys
