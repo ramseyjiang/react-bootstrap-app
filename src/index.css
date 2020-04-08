@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(231, 231, 231);
 }
 
 code {
@@ -26,12 +27,16 @@ code {
   padding: 0px;
 }
 
+.exchange-rate-bg {
+  background-color:lightgoldenrodyellow;
+}
+
 .movie-card-bottom {
   padding-bottom: 10px;
 }
 
 .movie-poster-desktop {
-  width: 330px;
-  height: 200px;
+  width: 238px;
+  height: 180px;
 }
 

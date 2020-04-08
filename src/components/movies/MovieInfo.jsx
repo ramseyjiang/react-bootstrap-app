@@ -6,7 +6,7 @@ const MovieInfo = ( { movie } ) => {
     <>
       {movie.Poster !== "N/A" && <Card className='text-center'>
         {movie.Title ? (
-          <Card.Header>Title: {movie.Title}</Card.Header>
+          <Card.Header>{movie.Title}</Card.Header>
         ) : (
           ""
         )}

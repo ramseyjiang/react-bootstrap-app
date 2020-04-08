@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Table } from "react-bootstrap";
+import { Table, Container } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import { useExchangeContext } from "../../contexts/ExchangeContext";
 
@@ -23,7 +23,7 @@ const CurrentExchangeRate = () => {
   };
   
   return (
-    <>
+    <Container className="exchange-rate-bg rounded">
       <h2 className="text-center">Rates as of {exchangeApi.state.data.date}</h2>
 
       <Table style={{ width: "60vw", margin: "0 auto" }}>
@@ -45,10 +45,10 @@ const CurrentExchangeRate = () => {
         </tbody>
       </Table>
 
-      <div style={{ height: "200px", width: "90vw", margin: "0 auto" }}>
+      <div style={{ height: "200px", width: "70vw", margin: "0 auto" }}>
         <Bar data={exchangeApi.state.data.barData} options={options} />
       </div>
-    </>
+    </Container>
   );
 };
 

@@ -1,13 +1,13 @@
 import React from "react";
 import { useMovieContext } from "../../contexts/MovieContext";
 import MovieInfo from './MovieInfo';
-import { Row, Col, Alert } from "react-bootstrap";
+import { Row, Col, Alert, Container } from "react-bootstrap";
 
 const MovieList = () => {
     const { movieApi } = useMovieContext();
 
     return (
-      <>
+      <Container>
         {movieApi.state.loading && !movieApi.state.errorMessage ? (
           <span>loading... </span>
         ) : movieApi.state.errorMessage ? (
@@ -21,7 +21,7 @@ const MovieList = () => {
             ))}
           </Row>
         )}
-      </>
+      </Container>
     );
   };
   
