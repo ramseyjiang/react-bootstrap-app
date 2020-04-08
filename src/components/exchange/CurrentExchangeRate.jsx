@@ -46,7 +46,7 @@ const CurrentExchangeRate = () => {
         </tbody>
       </Table>
 
-      <div style={{ height: "200px", width:"auto", margin: "0 auto" }}>
+      <div style={{ height: "auto", width:"auto", margin: "0 auto" }}>
         <Bar data={exchangeApi.state.data.barData} options={options} />
       </div>
     </Container>
