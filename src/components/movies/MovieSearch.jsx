@@ -33,10 +33,10 @@ const Search = () => {
     <Container>
       <Form>
         <Form.Group as={Row}>
-          <Col sm={8}>
-            <Form.Control type="text" placeholder="Input movie title, for example: Fast&Furious" onChange={handleSearchChange} value={searchValue}/>
+          <Col sm={6}>
+            <Form.Control type="text" placeholder="Input title, for example: Fast&Furious" onChange={handleSearchChange} value={searchValue}/>
           </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <Button variant="primary" type="submit" size="sm" onClick={handleSearch}>Search</Button>{' '}
           </Col>
         </Form.Group>

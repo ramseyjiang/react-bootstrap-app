@@ -27,7 +27,7 @@ const CurrentExchangeRate = () => {
     <Container className="exchange-rate-bg rounded">
       <h3 className="text-center">Exchange rates on {day()}-{month()}-{year()}</h3>
 
-      <Table striped bordered hover responsive="sm">
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>

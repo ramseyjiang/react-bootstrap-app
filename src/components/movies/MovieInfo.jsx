@@ -6,12 +6,12 @@ const MovieInfo = ( { movie } ) => {
     <>
       {movie.Poster !== "N/A" && <Card className='text-center'>
         {movie.Title ? (
-          <Card.Header>{movie.Title}</Card.Header>
+          <Card.Header className="movie-poster-title-size">{movie.Title}</Card.Header>
         ) : (
           ""
         )}
         <Card.Img
-          className='card-img-top mx-auto d-block movie-poster-desktop'
+          className='card-img-top mx-auto d-block'
           variant='top'
           src={movie.Poster}
         />

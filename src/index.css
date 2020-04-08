@@ -35,8 +35,7 @@ code {
   padding-bottom: 10px;
 }
 
-.movie-poster-desktop {
-  width: 238px;
-  height: 180px;
+.movie-poster-title-size {
+  font-size: 15px;
 }
 
