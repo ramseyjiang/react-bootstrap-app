@@ -20,8 +20,6 @@ const EndlessContext = createContext();
 const EndlessContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(endlessReducer, initState);
 
-  // const DOGS_API_URL = "https://dog.ceo/api/breeds/image/random/12";
-
   const loading = useCallback(() => dispatch({ type: LOADING }), []);
 
   const getData = useCallback((url) => {
