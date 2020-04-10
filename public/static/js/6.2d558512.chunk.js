@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-bootstrap-app"]=this["webpackJsonpreact-bootstrap-app"]||[]).push([[6],{211:function(t,a,e){"use strict";e.r(a);var n=e(0),o=e.n(n);a.default=function(){return console.log("contact"),o.a.createElement("h1",null,"Contact me")}}}]);
+//# sourceMappingURL=6.2d558512.chunk.js.map
