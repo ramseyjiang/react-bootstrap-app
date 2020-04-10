@@ -25,6 +25,12 @@ const Navigation = () => {
           </NavLink>
           <NavLink
             className='nav-link'
+            to='/dogs'
+            onClick={() => setExpanded(false)}>
+            Dogs
+          </NavLink>
+          <NavLink
+            className='nav-link'
             to='/movies'
             onClick={() => setExpanded(false)}>
             Movies

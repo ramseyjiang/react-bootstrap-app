@@ -7,6 +7,7 @@ import Login from "./auth/Login";
 //lazy-loading each and every component might be an anti-pattern and it is up to the developers to wisely choose
 //withholding unnecessary code during initial download and lazy-loading them on demand, all without sacrificing user experience.
 const NotFound = lazy(() => import("../views/NotFound"));
+const DogPage = lazy(() => import("../views/DogPage"));
 const MoviePage = lazy(() => import("../views/MoviePage"));
 const TaskPage = lazy(() => import("../views/TaskPage"));
 const Contact = lazy(() => import("../views/Contact"));
@@ -30,6 +31,7 @@ const Routes = () => {
         <Route exact path='/react-bootstrap-app' component={HomePage} />
         <Route path='/react-bootstrap-app' component={HomePage} />
         <AuthRoute path='/login' component={Login} />
+        <Route path='/dogs' component={DogPage} />
         <Route path='/movies' component={MoviePage} />
         <AuthRoute path='/tasks' component={TaskPage} />
         <Route path='/contact' component={Contact} />

@@ -11,7 +11,7 @@ const MovieInfo = ( { movie } ) => {
           ""
         )}
         <Card.Img
-          className='card-img-top mx-auto d-block'
+          className='card-img-top mx-auto d-block movie-poster'
           variant='top'
           src={movie.Poster}
         />
