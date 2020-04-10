@@ -5,11 +5,13 @@ import { Row, Col, Alert, Card, Container } from "react-bootstrap";
 const InfiniteScrolls = () => {
   const { endlessApi } = useEndlessContext();
 
+  const DOGS_API_URL = "https://dog.ceo/api/breeds/image/random/12";
+
   useEffect(() => {
     endlessApi.loading();
-    endlessApi.getData();
+    endlessApi.getData(DOGS_API_URL);
     window.addEventListener("scroll", () => {
-      endlessApi.isScrolling();
+      endlessApi.isScrolling(DOGS_API_URL);
     });
   }, [])
 

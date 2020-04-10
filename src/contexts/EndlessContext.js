@@ -3,7 +3,7 @@ import React, {
   useMemo,
   useContext,
   useCallback,
-  useReducer
+  useReducer,
 } from "react";
 import {
   initState,
@@ -11,7 +11,7 @@ import {
   LOADING,
   SET_LOAD_MORE,
   GET_DATA_SUCCESS,
-  GET_DATA_FAILURE
+  GET_DATA_FAILURE,
 } from "../services/EndlessReducer";
 import { get } from "../components/common/utils/Request";
 
@@ -20,43 +20,49 @@ const EndlessContext = createContext();
 const EndlessContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(endlessReducer, initState);
 
-  const DOGS_API_URL = "https://dog.ceo/api/breeds/image/random/12";
+  // const DOGS_API_URL = "https://dog.ceo/api/breeds/image/random/12";
 
   const loading = useCallback(() => dispatch({ type: LOADING }), []);
 
-  const getData = useCallback(() => {
-    get(DOGS_API_URL).then(result => {
+  const getData = useCallback((url) => {
+    get(url).then((result) => {
       try {
         dispatch({ type: GET_DATA_SUCCESS, data: result.message });
       } catch {
         dispatch({ type: GET_DATA_FAILURE, data: result.message });
       }
     });
-  }, [DOGS_API_URL]);
+  }, []);
 
-  const moreData = useCallback(() => {
-    get(DOGS_API_URL).then(result => {
-      try {
-        dispatch({
-          type: SET_LOAD_MORE,
-          data: result.message
-        });
-      } catch {
-        dispatch({ type: GET_DATA_FAILURE, data: state.data.result });
+  const moreData = useCallback(
+    (url) => {
+      get(url).then((result) => {
+        try {
+          dispatch({
+            type: SET_LOAD_MORE,
+            data: result.message,
+          });
+        } catch {
+          dispatch({ type: GET_DATA_FAILURE, data: state.data.result });
+        }
+      });
+    },
+    [state]
+  );
+
+  const isScrolling = useCallback(
+    (url) => {
+      if (
+        window.innerHeight + Math.ceil(document.documentElement.scrollTop) !==
+        document.documentElement.offsetHeight
+      ) {
+        return;
+      } else {
+        moreData(url);
       }
-    });
-  }, [state]);
-
-  const isScrolling = useCallback(() => {
-    if (
-      window.innerHeight + Math.ceil(document.documentElement.scrollTop) !==
-      document.documentElement.offsetHeight
-    ) {
-      return;
-    } else {
-      moreData();
-    }
-  }, [moreData]);
+    },
+    [moreData]
+  );
 
   const endlessApi = useMemo(
     () => ({ state, getData, moreData, loading, isScrolling }),
