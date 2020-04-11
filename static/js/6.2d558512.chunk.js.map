@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/Contact.jsx"],"names":["Contact","console","log"],"mappings":"kIAAA,2BAOeA,UALC,WAEd,OADEC,QAAQC,IAAI,WACP","file":"static/js/6.2d558512.chunk.js","sourcesContent":["import React from \"react\";\n\nconst Contact = () => {\n    console.log('contact');\n  return <h1>Contact me</h1>;\n};\n\nexport default Contact;"],"sourceRoot":""}
