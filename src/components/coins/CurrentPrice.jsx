@@ -9,7 +9,7 @@ const CurrentPrice = () => {
   useEffect(()=>{
     coinsApi.loading();
     coinsApi.getCoins();
-    setInterval(() => (coinsApi.getCoins()), 10000);
+    setInterval(() => (coinsApi.getCoins()), 5000);
   }, []);
 
   return (
