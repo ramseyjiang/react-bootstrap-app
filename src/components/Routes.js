@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
 import HomePage from "../views/HomePage";
 import Login from "./auth/Login";
+import RenderLoading from "./common/utils/RenderLoading";
 
 //lazy-loading each and every component might be an anti-pattern and it is up to the developers to wisely choose
 //withholding unnecessary code during initial download and lazy-loading them on demand, all without sacrificing user experience.
@@ -26,7 +27,7 @@ const Routes = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<RenderLoading />}>
       <Switch>
         <Route exact path='/react-bootstrap-app' component={HomePage} />
         <Route path='/react-bootstrap-app' component={HomePage} />

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useEndlessContext } from "../../contexts/EndlessContext";
+import RenderLoading from '../common/utils/RenderLoading';
 import { Row, Col, Alert, Card, Container } from "react-bootstrap";
 
 const InfiniteScrolls = () => {
@@ -19,7 +20,7 @@ const InfiniteScrolls = () => {
     <Container>
       <Alert variant='info'>This is an infinite scroll page to show dogs pictures.</Alert>
       {endlessApi.state.loading && !endlessApi.state.errorMessage ? (
-          <span>loading... </span>
+          <RenderLoading />
         ) : 
       (<Row>
          {endlessApi.state.data && endlessApi.state.data.map((img, index) => (
