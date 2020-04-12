@@ -9,7 +9,14 @@ const CurrentPrice = () => {
   useEffect(()=>{
     coinsApi.loading();
     coinsApi.getCoins();
-    setInterval(() => (coinsApi.getCoins()), 5000);
+    setInterval(() => (coinsApi.getCoins()), 5000);//When it is switched to the other link it will show the warning in the comment. 
+    //to do abort soon
+    /*
+    Our component “subscribes” to the promise, but it never “unsubscribes” or cancels the request. 
+    If for any reason, our component is unmounted before the promise resolves, our code will try to “set state” (calling setBananas) on an unmounted component. This will throw a warning:
+    Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
+    To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+    */ 
   }, []);
 
   return (
