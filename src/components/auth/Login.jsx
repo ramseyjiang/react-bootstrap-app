@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import InputText from '../common/form/InputText';
 import { useAuthContext } from "../../contexts/AuthContext";
+import RenderLoading from '../common/utils/RenderLoading';
 
 export default function Login() {
   const { authApi } = useAuthContext();
@@ -17,18 +18,19 @@ export default function Login() {
   const handleLogin = e => {
     authApi.loading(); 
     e.preventDefault(); 
+    authApi.firebaseLogin(login);
     authApi.login(login.username);                       
   }
 
   return (
     <>
-    { authApi.state.loading && <p>Loading</p>}
+    { authApi.state.loading && (<RenderLoading />)}
     { !authApi.state.loading && 
       <Container className="justify-content-center col-6 bg-light">
         { authApi.state.error && <Alert variant='danger'>{authApi.state.error}</Alert>}
         <Form onSubmit={handleLogin} method="post">
           <Form.Row>
-            <InputText placeholder="Please input username" type="text" label="Username" name="username" value={login.username} onChange={handleChange}/>
+            <InputText placeholder="Please input email" type="text" label="Email" name="email" value={login.email} onChange={handleChange}/>
           </Form.Row>
           <Form.Row>
             <InputText placeholder="Please input password" type="password" label="Password" name="password" value={login.password} onChange={handleChange}/>
