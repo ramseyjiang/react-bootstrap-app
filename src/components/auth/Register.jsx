@@ -18,8 +18,7 @@ export default function Register() {
   const handleRegister = e => {
     authApi.loading(); 
     e.preventDefault(); 
-    authApi.firebaseRegister(register);
-    authApi.login(register.username);                       
+    authApi.firebaseRegister(register);                   
   }
 
   return (

@@ -19,7 +19,6 @@ export default function Login() {
     authApi.loading(); 
     e.preventDefault(); 
     authApi.firebaseLogin(login);
-    authApi.login(login.username);                       
   }
 
   return (
