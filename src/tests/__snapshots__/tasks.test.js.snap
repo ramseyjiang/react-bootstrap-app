@@ -146,7 +146,7 @@ Array [
         className="form-row"
       >
         <div
-          className="form-group col"
+          className="form-group"
         >
           <label
             className="form-label"
@@ -164,7 +164,7 @@ Array [
           />
         </div>
         <div
-          className="form-group col"
+          className="form-group"
         >
           <label
             className="form-label"
