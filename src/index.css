@@ -38,6 +38,10 @@ code {
   background-color:lightgoldenrodyellow;
 }
 
+.auth-padding {
+  padding: 10px 0px;
+}
+
 .movie-card-bottom {
   padding-bottom: 10px;
 }
