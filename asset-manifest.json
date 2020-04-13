@@ -1,35 +1,35 @@
 {
   "files": {
     "main.css": "/react-bootstrap-app/static/css/main.d2ee5bf3.chunk.css",
-    "main.js": "/react-bootstrap-app/static/js/main.002128c1.chunk.js",
-    "main.js.map": "/react-bootstrap-app/static/js/main.002128c1.chunk.js.map",
-    "runtime-main.js": "/react-bootstrap-app/static/js/runtime-main.994571f8.js",
-    "runtime-main.js.map": "/react-bootstrap-app/static/js/runtime-main.994571f8.js.map",
+    "main.js": "/react-bootstrap-app/static/js/main.b26e12d7.chunk.js",
+    "main.js.map": "/react-bootstrap-app/static/js/main.b26e12d7.chunk.js.map",
+    "runtime-main.js": "/react-bootstrap-app/static/js/runtime-main.ee938f27.js",
+    "runtime-main.js.map": "/react-bootstrap-app/static/js/runtime-main.ee938f27.js.map",
     "static/css/2.47e06e2e.chunk.css": "/react-bootstrap-app/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.ae7e6548.chunk.js": "/react-bootstrap-app/static/js/2.ae7e6548.chunk.js",
-    "static/js/2.ae7e6548.chunk.js.map": "/react-bootstrap-app/static/js/2.ae7e6548.chunk.js.map",
-    "static/js/3.aed0bea5.chunk.js": "/react-bootstrap-app/static/js/3.aed0bea5.chunk.js",
-    "static/js/3.aed0bea5.chunk.js.map": "/react-bootstrap-app/static/js/3.aed0bea5.chunk.js.map",
-    "static/js/4.00671974.chunk.js": "/react-bootstrap-app/static/js/4.00671974.chunk.js",
-    "static/js/4.00671974.chunk.js.map": "/react-bootstrap-app/static/js/4.00671974.chunk.js.map",
+    "static/js/2.1c6d8cf1.chunk.js": "/react-bootstrap-app/static/js/2.1c6d8cf1.chunk.js",
+    "static/js/2.1c6d8cf1.chunk.js.map": "/react-bootstrap-app/static/js/2.1c6d8cf1.chunk.js.map",
+    "static/js/3.0a2c459d.chunk.js": "/react-bootstrap-app/static/js/3.0a2c459d.chunk.js",
+    "static/js/3.0a2c459d.chunk.js.map": "/react-bootstrap-app/static/js/3.0a2c459d.chunk.js.map",
+    "static/js/4.9638def7.chunk.js": "/react-bootstrap-app/static/js/4.9638def7.chunk.js",
+    "static/js/4.9638def7.chunk.js.map": "/react-bootstrap-app/static/js/4.9638def7.chunk.js.map",
     "static/js/5.ab6f96f9.chunk.js": "/react-bootstrap-app/static/js/5.ab6f96f9.chunk.js",
     "static/js/5.ab6f96f9.chunk.js.map": "/react-bootstrap-app/static/js/5.ab6f96f9.chunk.js.map",
-    "static/js/6.dbba3e66.chunk.js": "/react-bootstrap-app/static/js/6.dbba3e66.chunk.js",
-    "static/js/6.dbba3e66.chunk.js.map": "/react-bootstrap-app/static/js/6.dbba3e66.chunk.js.map",
+    "static/js/6.599d6bdf.chunk.js": "/react-bootstrap-app/static/js/6.599d6bdf.chunk.js",
+    "static/js/6.599d6bdf.chunk.js.map": "/react-bootstrap-app/static/js/6.599d6bdf.chunk.js.map",
     "static/js/7.6afda61b.chunk.js": "/react-bootstrap-app/static/js/7.6afda61b.chunk.js",
     "static/js/7.6afda61b.chunk.js.map": "/react-bootstrap-app/static/js/7.6afda61b.chunk.js.map",
     "index.html": "/react-bootstrap-app/index.html",
-    "precache-manifest.39b8551e060c5b75b571504a908bd9b4.js": "/react-bootstrap-app/precache-manifest.39b8551e060c5b75b571504a908bd9b4.js",
+    "precache-manifest.38aea16ea04365a1bd120692073bf48c.js": "/react-bootstrap-app/precache-manifest.38aea16ea04365a1bd120692073bf48c.js",
     "service-worker.js": "/react-bootstrap-app/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/react-bootstrap-app/static/css/2.47e06e2e.chunk.css.map",
     "static/css/main.d2ee5bf3.chunk.css.map": "/react-bootstrap-app/static/css/main.d2ee5bf3.chunk.css.map",
-    "static/js/2.ae7e6548.chunk.js.LICENSE.txt": "/react-bootstrap-app/static/js/2.ae7e6548.chunk.js.LICENSE.txt"
+    "static/js/2.1c6d8cf1.chunk.js.LICENSE.txt": "/react-bootstrap-app/static/js/2.1c6d8cf1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.994571f8.js",
+    "static/js/runtime-main.ee938f27.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.ae7e6548.chunk.js",
+    "static/js/2.1c6d8cf1.chunk.js",
     "static/css/main.d2ee5bf3.chunk.css",
-    "static/js/main.002128c1.chunk.js"
+    "static/js/main.b26e12d7.chunk.js"
   ]
 }
