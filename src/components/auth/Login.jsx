@@ -25,16 +25,12 @@ export default function Login() {
     <>
     { authApi.state.loading && (<RenderLoading />)}
     { !authApi.state.loading && 
-      <Container className="justify-content-center col-6 bg-light">
+      <Container className="justify-content-center col-6 bg-light rounded">
         { authApi.state.error && <Alert variant='danger'>{authApi.state.error}</Alert>}
         <Form onSubmit={handleLogin} method="post">
-          <Form.Row>
-            <InputText placeholder="Please input email" type="text" label="Email" name="email" value={login.email} onChange={handleChange}/>
-          </Form.Row>
-          <Form.Row>
-            <InputText placeholder="Please input password" type="password" label="Password" name="password" value={login.password} onChange={handleChange}/>
-          </Form.Row>
-            <Button variant="primary" type="submit" size="sm">Login</Button>
+          <InputText placeholder="Please input email" type="text" label="Email" name="email" value={login.email} onChange={handleChange}/>
+          <InputText placeholder="Please input password" type="password" label="Password" name="password" value={login.password} onChange={handleChange}/>
+          <Button variant="primary" type="submit" size="sm">Login</Button>
         </Form>
       </Container> }
     </>

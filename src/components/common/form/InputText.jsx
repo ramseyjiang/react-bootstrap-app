@@ -1,5 +1,5 @@
-import React from "react";
-import { Form, Col } from 'react-bootstrap';
+import React, {useState} from "react";
+import { Form } from 'react-bootstrap';
 
 const InputText = ({
   name,
@@ -12,14 +12,18 @@ const InputText = ({
   multiple = false,
   value
 }) => {
+  const [hidden, setHidden] = useState(false);
+
+  const handleClick = e => {
+    hidden === false ? setHidden(true) : setHidden(false);
+  }
+
   return (
-    <>
-        <Form.Group as={Col}>
-            <Form.Label>{label}</Form.Label>
-            <Form.Control type={type} placeholder={placeholder} name={name} value={value} onChange={onChange} required/>
-        </Form.Group>
-      {/* {error && <div style={Style.error}>{error}</div>} */}
-    </>
+    <Form.Group>
+      <Form.Label>{label}</Form.Label>
+      <Form.Control type={hidden ? "text" : type} placeholder={placeholder} name={name} value={value} onChange={onChange} required/>
+      {name==="password" && <Form.Check type="checkbox" label={hidden ? "Hide password" : "Show password"} onClick={handleClick} />}
+    </Form.Group>
   );
 };
 
