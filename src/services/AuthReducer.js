@@ -47,7 +47,7 @@ const loginSuccess = (action) => {
 };
 
 const loginFailure = (action) => {
-  setLocal("username", null);
+  removeLocal("username");
   return { ...initAuth, error: action.error };
 };
 
