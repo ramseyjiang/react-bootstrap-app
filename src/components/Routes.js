@@ -36,12 +36,12 @@ const Routes = () => {
       <Switch>
         <Route exact path='/react-bootstrap-app' component={HomePage} />
         <Route path='/react-bootstrap-app' component={HomePage} />
-        <AuthRoute path='/react-bootstrap-app/login' component={Login} />
-        <AuthRoute path='/react-bootstrap-app/register' component={Register} />
-        <Route path='/react-bootstrap-app/dogs' component={DogPage} />
-        <Route path='/react-bootstrap-app/movies' component={MoviePage} />
-        <AuthRoute path='/react-bootstrap-app/tasks' component={TaskPage} />
-        <Route path='/react-bootstrap-app/contact' component={Contact} />
+        <AuthRoute path='/login' component={Login} />
+        <AuthRoute path='/register' component={Register} />
+        <Route path='/dogs' component={DogPage} />
+        <Route path='/movies' component={MoviePage} />
+        <AuthRoute path='/tasks' component={TaskPage} />
+        <Route path='/contact' component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

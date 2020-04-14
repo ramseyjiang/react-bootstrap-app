@@ -19,38 +19,38 @@ const Navigation = () => {
           <NavLink
             exact
             className='nav-link'
-            to='/react-bootstrap-app/react-bootstrap-app'
+            to='/react-bootstrap-app'
             onClick={() => setExpanded(false)}>
             Home
           </NavLink>
           <NavLink
             className='nav-link'
-            to='/react-bootstrap-app/dogs'
+            to='/dogs'
             onClick={() => setExpanded(false)}>
             Dogs
           </NavLink>
           <NavLink
             className='nav-link'
-            to='/react-bootstrap-app/movies'
+            to='/movies'
             onClick={() => setExpanded(false)}>
             Movies
           </NavLink>
           <NavLink
             className='nav-link'
-            to='/react-bootstrap-app/tasks'
+            to='/tasks'
             onClick={() => setExpanded(false)}>
             Tasks
           </NavLink>
           <NavLink
             className='nav-link'
-            to='/react-bootstrap-app/contact'
+            to='/contact'
             onClick={() => setExpanded(false)}>
             Contact
           </NavLink>
         </Nav>
         { !authApi.state.isLoggedIn && <Nav>
-          <NavLink exact to="/react-bootstrap-app/login" className='nav-link'>Login</NavLink>
-          <NavLink exact to="/react-bootstrap-app/register" className='nav-link'>Register</NavLink>
+          <NavLink exact to="/login" className='nav-link'>Login</NavLink>
+          <NavLink exact to="/register" className='nav-link'>Register</NavLink>
         </Nav> }
         { authApi.state.isLoggedIn && <Nav>
           <NavLink to="/react-bootstrap-app" onClick={() => authApi.logout()} className='nav-link'>Logout</NavLink>
