@@ -15,3 +15,6 @@ const config = {
 export default !firebase.apps.length
   ? firebase.initializeApp(config)
   : firebase.app();
+
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const fbProvider = new firebase.auth.FacebookAuthProvider();

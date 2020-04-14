@@ -17,7 +17,7 @@ import {
   LOGOUT,
 } from "../services/AuthReducer";
 
-import firebase from "../firebase";
+import firebase, { googleProvider, fbProvider } from "../firebase";
 
 const AuthContext = createContext();
 
@@ -33,8 +33,6 @@ const AuthContextProvider = ({ children }) => {
   }, [state.username]);
 
   const loading = () => dispatch({ type: LOADING });
-
-  // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const firebaseRegister = useCallback(async (register) => {
     firebase
@@ -67,11 +65,30 @@ const AuthContextProvider = ({ children }) => {
       });
   }, []);
 
+  const socialSignIn = useCallback(async (socialMedia) => {
+    if (socialMedia === "google") {
+      socialMedia = googleProvider;
+      socialMedia.addScope("https://www.googleapis.com/auth/plus.login");
+    } else {
+      socialMedia = fbProvider;
+    }
+
+    firebase
+      .auth()
+      .signInWithPopup(socialMedia)
+      .then((res) => {
+        return dispatch({ type: SUCCESS, username: res.user.displayName });
+      })
+      .catch((error) => {
+        return dispatch({ type: FAIL, error: error.message });
+      });
+  }, []);
+
   const logout = useCallback(() => {
     firebase
       .auth()
       .signOut()
-      .then((res) => {
+      .then(() => {
         return dispatch({ type: LOGOUT });
       })
       .catch((e) => {
@@ -80,8 +97,15 @@ const AuthContextProvider = ({ children }) => {
   }, []);
 
   const authApi = useMemo(
-    () => ({ state, loading, logout, firebaseRegister, firebaseLogin }),
-    [logout, firebaseRegister, firebaseLogin, state]
+    () => ({
+      state,
+      loading,
+      logout,
+      firebaseRegister,
+      firebaseLogin,
+      socialSignIn,
+    }),
+    [logout, firebaseRegister, firebaseLogin, socialSignIn, state]
   );
 
   return (

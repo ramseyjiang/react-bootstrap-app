@@ -3,6 +3,7 @@ import { Container, Form, Button, Alert } from 'react-bootstrap';
 import InputText from '../common/form/InputText';
 import { useAuthContext } from "../../contexts/AuthContext";
 import RenderLoading from '../common/utils/RenderLoading';
+import Social from './Social';
 
 export default function Login() {
   const { authApi } = useAuthContext();
@@ -21,6 +22,14 @@ export default function Login() {
     authApi.firebaseLogin(login);
   }
 
+  const handleGoogle = () => {
+    authApi.socialSignIn('google');
+  };
+
+  const handleFb = () => {
+    authApi.socialSignIn('fb');
+  };
+
   return (
     <>
     { authApi.state.loading && (<RenderLoading />)}
@@ -28,6 +37,7 @@ export default function Login() {
       <Container className="justify-content-center col-6 bg-light rounded">
         { authApi.state.error && <Alert variant='danger'>{authApi.state.error}</Alert>}
         <Form onSubmit={handleLogin} method="post" className="auth-padding">
+        <Social handleGoogle={handleGoogle} handleFb={handleFb} title="Login with"/>
           <InputText placeholder="Please input email" type="text" label="Email" name="email" value={login.email} onChange={handleChange}/>
           <InputText placeholder="Please input password" type="password" label="Password" name="password" value={login.password} onChange={handleChange}/>
           <Button variant="primary" type="submit" size="sm">Login</Button>

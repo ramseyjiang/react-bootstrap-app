@@ -20,6 +20,10 @@ const Routes = () => {
   const AuthRoute = ({ component, ...options }) => {
     if (component === Login && authApi.state.isLoggedIn) {
       return <Redirect to='/react-bootstrap-app' />;
+    } else if (component === Register && authApi.state.isLoggedIn) {
+      return <Redirect to='/react-bootstrap-app' />;
+    } else if (component === Register && !authApi.state.isLoggedIn) {
+      return <Route {...options} component={Register} />;
     } else {
       const finalComponent = authApi.state.isLoggedIn ? component : Login;
 
@@ -33,7 +37,7 @@ const Routes = () => {
         <Route exact path='/react-bootstrap-app' component={HomePage} />
         <Route path='/react-bootstrap-app' component={HomePage} />
         <AuthRoute path='/login' component={Login} />
-        <Route path='/register' component={Register} />
+        <AuthRoute path='/register' component={Register} />
         <Route path='/dogs' component={DogPage} />
         <Route path='/movies' component={MoviePage} />
         <AuthRoute path='/tasks' component={TaskPage} />

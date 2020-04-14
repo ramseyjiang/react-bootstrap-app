@@ -42,6 +42,10 @@ code {
   padding: 10px 0px;
 }
 
+.social-button-padding {
+  padding:0px;
+}
+
 .movie-card-bottom {
   padding-bottom: 10px;
 }
