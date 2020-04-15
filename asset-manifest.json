@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-bootstrap-app/static/css/main.935c4caa.chunk.css",
-    "main.js": "/react-bootstrap-app/static/js/main.769a0238.chunk.js",
-    "main.js.map": "/react-bootstrap-app/static/js/main.769a0238.chunk.js.map",
+    "main.js": "/react-bootstrap-app/static/js/main.95a1b66e.chunk.js",
+    "main.js.map": "/react-bootstrap-app/static/js/main.95a1b66e.chunk.js.map",
     "runtime-main.js": "/react-bootstrap-app/static/js/runtime-main.2ffc27a9.js",
     "runtime-main.js.map": "/react-bootstrap-app/static/js/runtime-main.2ffc27a9.js.map",
     "static/js/2.5232865c.chunk.js": "/react-bootstrap-app/static/js/2.5232865c.chunk.js",
@@ -21,7 +21,7 @@
     "static/js/8.462dbb68.chunk.js": "/react-bootstrap-app/static/js/8.462dbb68.chunk.js",
     "static/js/8.462dbb68.chunk.js.map": "/react-bootstrap-app/static/js/8.462dbb68.chunk.js.map",
     "index.html": "/react-bootstrap-app/index.html",
-    "precache-manifest.c77471776b776f5eb50c4da8ba27f286.js": "/react-bootstrap-app/precache-manifest.c77471776b776f5eb50c4da8ba27f286.js",
+    "precache-manifest.773f3f79f194b001d721e75f58db94f6.js": "/react-bootstrap-app/precache-manifest.773f3f79f194b001d721e75f58db94f6.js",
     "service-worker.js": "/react-bootstrap-app/service-worker.js",
     "static/css/3.47e06e2e.chunk.css.map": "/react-bootstrap-app/static/css/3.47e06e2e.chunk.css.map",
     "static/css/main.935c4caa.chunk.css.map": "/react-bootstrap-app/static/css/main.935c4caa.chunk.css.map",
@@ -33,6 +33,6 @@
     "static/css/3.47e06e2e.chunk.css",
     "static/js/3.906aeaeb.chunk.js",
     "static/css/main.935c4caa.chunk.css",
-    "static/js/main.769a0238.chunk.js"
+    "static/js/main.95a1b66e.chunk.js"
   ]
 }
