@@ -17,7 +17,7 @@ const InfiniteScrolls = () => {
   }, [])
 
   return (
-    <Container>
+    <Container className="dogs-bg">
       <Alert variant='info'>This is an infinite scroll page to show dogs pictures.</Alert>
       {endlessApi.state.loading && !endlessApi.state.errorMessage ? (
           <RenderLoading />

@@ -13,8 +13,8 @@ const ShowProfile = () => {
     <>
       {!profileApi.state.data ? 
       (<RenderLoading />) : 
-      (<Container>
-        <div className="row center wow fadeInDown animated">
+      (<Container className="profile-bg rounded profile-bottom">
+        <div className="row">
           <div className="col-3">
             <Figure className="thumbnail">
               <Figure.Image
@@ -24,7 +24,7 @@ const ShowProfile = () => {
             </Figure>
           </div>
           <div className="col-9">
-            <span>I am, Ramsey Jiang, looking for a role as fullstack or backend or react developer.</span>
+            <span>I am Ramsey Jiang, looking for a role as fullstack or backend or react developer.</span>
             <p>I am a New Zealand Permanent Resident and I have over 10 years experience as a fullstack developer. I Enjoy jogging and fishing.</p>
             <p>Good at by following techs, such as PHP, Laravel, React, VueJS, JQuery, MySQL, Mongo, Ajax, HTML/HTML5, CSS/CSS3, Github, Docker, NodeJs, Python.</p>
             
