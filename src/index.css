@@ -27,6 +27,14 @@ code {
   padding: 0px;
 }
 
+.avatar-text {
+  font-size: 12px;;
+}
+
+.link-icon-color {
+  color:white;
+}
+
 .coins-bg {
   padding-top: 10px;
   background-color:lightsteelblue;

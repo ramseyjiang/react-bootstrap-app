@@ -25,6 +25,12 @@ const Navigation = () => {
           </NavLink>
           <NavLink
             className='nav-link'
+            to='/coins'
+            onClick={() => setExpanded(false)}>
+            Coins
+          </NavLink>
+          <NavLink
+            className='nav-link'
             to='/dogs'
             onClick={() => setExpanded(false)}>
             Dogs
@@ -40,12 +46,6 @@ const Navigation = () => {
             to='/tasks'
             onClick={() => setExpanded(false)}>
             Tasks
-          </NavLink>
-          <NavLink
-            className='nav-link'
-            to='/contact'
-            onClick={() => setExpanded(false)}>
-            Contact
           </NavLink>
         </Nav>
         { !authApi.state.isLoggedIn && <Nav>
