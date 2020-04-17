@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./components/common/layout/Layout";
 import AuthContextProvider from "./contexts/AuthContext";
 
-test("HooksHut", () => {
+test("See HooksHut", () => {
   const { getByText } = render(
     <BrowserRouter>
       <AuthContextProvider>

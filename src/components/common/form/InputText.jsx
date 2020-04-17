@@ -43,12 +43,15 @@ InputText.propTypes = {
 }
 
 InputText.defaultProps = {
-  labelText: '',
-  errorMessage: '',
+  name: 'name',
+  type: 'text',
   placeholder: '',
-  className: '',
-  disabled: false,
+  onChange: ()=>{},
+  error: '',
+  label: '',
   multiple: false,
+  disabled: false,
+  value: null,
 }
 
 export default InputText;

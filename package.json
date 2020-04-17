@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "firebase": "^7.14.0",
     "formik": "^2.1.4",
     "gh-pages": "^2.2.0",
@@ -22,6 +24,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-test-renderer": "^16.13.0",
+    "sinon": "^9.0.2",
     "uniqid": "^5.2.0"
   },
   "scripts": {

@@ -13,8 +13,8 @@ export default function TimeLine() {
 
   return (
     <Container className="timeline-bg timeline-title rounded">
-      <p className="text-center"><h3>Website Guide</h3></p>
-      <div class="timeline">
+      <h3 className="text-center">Website Guide</h3>
+      <div className="timeline">
       {Object.keys(obj).map((key, index) => (
         <div key={index} className={obj[key].pos}>
           <div className="content">
